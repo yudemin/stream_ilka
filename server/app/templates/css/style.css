@@ -1,0 +1,100 @@
+body{ 
+margin: 0;
+font-family: Arial;
+}
+.header h2{
+
+background-color: #eee;
+padding: .6em;
+margin-bottom: 0.3em;
+
+}
+h2{
+padding: .6em;
+margin-bottom: 0.3em;
+}
+a:visited{
+	color:blue;
+}
+
+.header a {
+text-decoration: none;
+padding:10px;
+
+}
+.menu{
+padding-left: 1em;
+}
+.menu a{
+display: inline-block;
+padding: 10px 15px 10px 15px;
+border: 1px solid gray;
+color: white;
+background-color: #555;
+text-decoration: none;
+}
+.content{
+padding-left: 15px;
+}
+
+input.au{
+	font-size:18pt;
+	position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+li.nav-item a{
+	font-size: 18px;
+}
+textarea {
+  display: block;
+  margin:auto;
+  resize: none;
+  position: relative;
+  min-width: 100px;
+  min-height: 50px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #343a40;
+  box-shadow: 5px 5px 7px #a9a9a9;
+}
+.send {
+  background-color: #343a40;
+  color: white;
+  display: block;
+  margin:auto;
+  -webkit-user-select: none;
+  position: relative;
+  text-align: center;
+
+  line-height: 1.5em;
+  border-radius: 5px;
+  padding: 5px;
+  border: 0px;
+  min-width: 90px;
+}
+
+
+div.form-signin {  
+  width: 30%;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#stbut {
+  padding:10px;
+  font-weight: bold;
+}

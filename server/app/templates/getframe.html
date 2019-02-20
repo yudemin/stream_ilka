@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{buf}}
+	<h2>getframe</h2>
+	{% if request.method == 'POST' %}
+			<b>Session ID:<span style="color:blue">{{ ses_id }}</span></b>
+	{% endif %}
+	<br>
+	<input type="button" id="stbut" onclick="stst()" value="START">
+	<br>
+	<h> STREAM : </h><br><br>
+	<img src='' id = 'screenpanel' alt=''>
+	<!--START https://icons8.com/iconizer/files/Pretty_office_icons_part_5/orig/start.png-->
+	<!--STOP https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSSthdvIu4rlhA89zM-uaKJBBtdZRSfnpmF9m9KLxmebXSO4OVBQ-->
+	
+
+	<script type='text/javascript'>
+	function getCookie(name) {
+  			var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}     // здесь
+
+	function stst(){
+		var stbut = document.getElementById("stbut");
+		if (stbut.value == "START") {
+			stbut.value = "STOP"
+			var timerId = setInterval(update,100);
+			
+			//document.cookie="ses_id="+document.getElementById("ids").text();
+		} else {
+			clearInterval(timerId);
+			stbut.value = "START"
+		}
+	}
+	const url='http://stream.std-573.ist.mospolytech.ru/getframe?ses_id='+getCookie("ses_id");	// здесь
+	function update(){
+		if (document.getElementById("stbut").value == "START") {return}else{
+			fetch(url).then(function(response) 
+			{
+  			response.text().then(function(text) 
+  			{
+    			if (text=='0') {return}else{
+    				screenpanel.src ="data:image/jpg;base64," + text;
+    			}
+		});
+		}); 
+		}
+	};
+	
+	</script>
+
+{% endblock %}

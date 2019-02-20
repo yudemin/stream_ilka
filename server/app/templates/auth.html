@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<h2>Auth</h2>
+	{{buf}}
+	<form method="POST">
+		<input type="text" class="au form-control" id= "text_id" name="ses_id" placeholder='Session_ID'>
+		<br>
+		<input class="send" type="submit" onclick="setcookie()">
+
+	</form>
+	
+	<script type="text/javascript">
+		function setcookie(){
+			document.cookie="ses_id="+document.getElementById("text_id").value; 
+			//TODO проверить корректность текста
+		} 
+	</script>
+
+	{% if request.method == 'POST' %}
+			<b><span style="color:blue">{{ ses_id }}</span></b>
+	{% endif %}
+{% endblock %}

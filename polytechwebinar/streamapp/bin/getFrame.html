@@ -1,0 +1,30 @@
+<html><body>
+<h>T I P A - B I D E O : </h><br><br>
+<img src='' id = 'screenpanel' alt=''>
+<script type='text/javascript'>
+	const Http = new XMLHttpRequest();
+	const method_name = 'getFrame_2';
+	const url='http://localhost:8080/';
+	function update(){
+		Http.onerror =  function(){    	
+			alert("something went wrong"); 
+		}
+
+		Http.open('GET', url + method_name);	
+		Http.send();
+		Http.onload = function(){			
+			Http.onreadystatechange=(e)=>
+			{
+				//console.log('Http.responseText');
+				screenpanel.src ="data:image/png;base64," + Http.responseText;
+			}		
+		}
+
+		
+	}
+	setInterval(update,1000);
+	
+</script>
+
+
+</body></html>
